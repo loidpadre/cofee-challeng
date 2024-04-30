@@ -3,12 +3,16 @@ export default function Card({ info }) {
 	const { name, price, image, rating, votes, popular } = info
 	return (
 		<div>
-			<div className="w-[250px]">
-				<div className='relative'>
+			<div className="w-[250px] ">
+				<div className="relative">
 					<img className="rounded-2xl mb-2" src={image} alt="" />
-                    {
-                        popular? <p className='absolute top-2 left-2 bg-[#F6C768] py-1 px-2 rounded-xl  text-zinc-800'>Popular</p>: ""
-                    }
+					{popular ? (
+						<p className="absolute top-2 left-2 bg-[#F6C768] py-1 px-2 rounded-xl  text-zinc-800">
+							Popular
+						</p>
+					) : (
+						''
+					)}
 				</div>
 				<div className="flex justify-between">
 					<h1 className="font-semibold">{name}</h1>
