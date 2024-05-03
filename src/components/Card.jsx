@@ -3,7 +3,7 @@ export default function Card({ info }) {
 	const { name, price, image, rating, votes, popular } = info
 	return (
 		<div>
-			<div className="w-[250px] ">
+			<div className="w-[250px] mx-auto  ">
 				<div className="relative">
 					<img className="rounded-2xl mb-2" src={image} alt="" />
 					{popular ? (

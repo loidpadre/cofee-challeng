@@ -32,8 +32,8 @@ function App() {
 		<div>
 			<div>
 				<img className="w-full" src={IMG} alt="bg-cofee" />
-				<div className="w-[1110px]  bg-[#1B1D1F] text-white rounded-xl p-8 mx-auto -top-20 relative">
-					<div className="text-center w-1/2 m-auto ">
+				<div className="md:w-[1110px]  bg-[#1B1D1F] text-white rounded-xl p-8 md:mx-auto -top-20 relative">
+					<div className="text-center md:w-1/2 m-auto ">
 						<h1 className="font-bold text-4xl">Our collection</h1>
 						<p className="mt-5 text-gray-400">
 							Começando pela acidez, seguindo pelo aroma e depois
@@ -57,11 +57,15 @@ function App() {
 							</button>
 						</div>
 					</div>
-					<div className="grid grid-cols-3 mt-10 gap-y-20">
-						{data.map((info) => (
-							<Card key={info.id} info={info} />
-						))}
-					</div>
+					{data ? (
+						<div className="md:grid flex flex-col items-center space-y-10 md:grid-cols-3  mt-10 md:gap-y-20">
+							{data.map((info) => (
+								<Card key={info.id} info={info} />
+							))}
+						</div>
+					) : (
+						'Carregando...'
+					)}
 				</div>
 			</div>
 		</div>
